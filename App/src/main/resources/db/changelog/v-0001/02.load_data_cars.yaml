@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: 03
+      author: azioruj
+      changes:
+        - loadData:
+            catalogName: cars_list2
+            columns:
+                - column:
+                      name: id
+                      type: NUMERIC
+                      autoIncrement: true
+                      constraints:
+                          primaryKey: true
+                          primaryKeyName: car_id
+                          nullable: false
+                - column:
+                      name: name
+                      type: STRING
+                      constraints:
+                          nullable: false
+                - column:
+                      name: model
+                      type: STRING
+                      constraints:
+                          nullable: false
+                - column:
+                      name: year
+                      type: NUMERIC
+                      constraints:
+                          nullable: false
+                - column:
+                      name: price
+                      type: NUMERIC
+                      constraints:
+                          nullable: false
+                - column:
+                      name: city
+                      type: STRING
+                      constraints:
+                          nullable: false
+                - column:
+                      name: credit
+                      type: BOOLEAN
+                      constraints:
+                          nullable: false
+                - column:
+                      name: barter
+                      type: BOOLEAN
+                      constraints:
+                          nullable: false
+            commentLineStartsWith: /
+            encoding: UTF-8
+            file: example/cars.csv
+            quotchar: ''
+            relativeToChangelogFile: true
+            schemaName: public
+            separator: ','
+            tableName: cars_test
+            usePreparedStatements: true

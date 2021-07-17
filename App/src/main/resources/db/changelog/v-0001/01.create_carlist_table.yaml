@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01
+      author: azioruj
+      changes:
+        - createTable:
+            tableName: cars_test
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: car_id
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: model
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: year
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: credit
+                  type: TINYINT(1)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: barter
+                  type: TINYINT(1)
+                  constraints:
+                    nullable: false

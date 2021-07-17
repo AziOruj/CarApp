@@ -1,0 +1,15 @@
+docker-compuse up
+project run
+
+............................PostMan Request Search...............................
+{
+    "name": "Mercedes",
+    "model": "C-Class",
+    "minYear" : 2000,
+    "maxYear" : 2020,
+    "minPrice": 9000,
+    "maxPrice": 100000,
+    "city" : "Baku",
+    "credit" : true,
+    "barter" : false
+}

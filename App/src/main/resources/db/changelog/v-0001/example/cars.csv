@@ -1,0 +1,11 @@
+id,name,model,year,price,city,credit,barter
+1,Mercedes,C-Class,2010,12000,Baku,TRUE,FALSE
+2,BMW,X-5,2018,40000,Sumgayit,TRUE,TRUE
+3,Volvo,220L,2019,23700,Baku,FALSE,FALSE
+4,Opel,Astra,2010,12400,Ganja,TRUE,FALSE
+5,Kia,Optima,2015,22000,Baku,FALSE,TRUE
+6,Mercedes,S-Class,2015,18000,Baku,TRUE,FALSE
+7,BMW,X-6,2020,80000,Sumgayit,TRUE,TRUE
+8,Volvo,220ts,2020,40000,Baku,FALSE,FALSE
+9,Opel,Nomodel,2017,9000,Ganja,TRUE,FALSE
+10,Kia,Rio,2010,9800.20,Baku,FALSE,TRUE
