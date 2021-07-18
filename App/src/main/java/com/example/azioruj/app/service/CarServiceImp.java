@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -97,6 +98,7 @@ public class CarServiceImp implements  CarService{
 
     public List<CarDto> searchSpecify(SearchCar searchCar){
         try {
+            //noinspection unchecked
             List<Car> car = carRepository.findAll(
                     (root, query, cb) ->
                     {
@@ -110,16 +112,21 @@ public class CarServiceImp implements  CarService{
                 if (searchCar.getCity() != null) {
                     predicates.add(cb.equal(root.get(Car_.CITY), searchCar.getCity()));
                 }
+
                 if (searchCar.getMinPrice() != null) {
+                    //noinspection unchecked
                     predicates.add(cb.greaterThanOrEqualTo(root.get(Car_.PRICE), searchCar.getMinPrice()));
                 }
                 if (searchCar.getMaxPrice() != null) {
+                    //noinspection unchecked
                     predicates.add(cb.lessThanOrEqualTo(root.get(Car_.PRICE), searchCar.getMaxPrice()));
                 }
                 if (searchCar.getMinYear() != null) {
+                    //noinspection unchecked
                     predicates.add(cb.greaterThanOrEqualTo(root.get(Car_.YEAR), searchCar.getMinYear()));
                 }
                 if (searchCar.getMaxYear() != null) {
+                    //noinspection unchecked
                     predicates.add(cb.lessThanOrEqualTo(root.get(Car_.YEAR), searchCar.getMaxYear()));
                 }
                 if (searchCar.getCredit() != null) {
@@ -128,7 +135,7 @@ public class CarServiceImp implements  CarService{
                 if (searchCar.getBarter() != null) {
                     predicates.add(cb.equal(root.get(Car_.BARTER), searchCar.getBarter()));
                 }
-                return cb.and(predicates.toArray(new Predicate[0]));
+                return cb.or(predicates.toArray(new Predicate[0]));
 
                      });
                      return mapper.map(car,new TypeToken<List<CarDto>>(){}.getType());

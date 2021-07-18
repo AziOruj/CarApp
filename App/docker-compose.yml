@@ -9,13 +9,13 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
     ports:
-      - 3306:3306
+      - 3606:3306
   adminer:
     hostname: adminer
     image: adminer
     restart: always
     ports:
-      - 8580:8080
+      - 8686:8080
 
 
 volumes:
