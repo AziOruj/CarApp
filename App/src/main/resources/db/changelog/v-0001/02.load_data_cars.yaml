@@ -4,7 +4,7 @@ databaseChangeLog:
       author: azioruj
       changes:
         - loadData:
-            catalogName: cars_list2
+            catalogName: cars_list
             columns:
                 - column:
                       name: id
@@ -56,5 +56,5 @@ databaseChangeLog:
             relativeToChangelogFile: true
             schemaName: public
             separator: ','
-            tableName: cars_test
+            tableName: cars
             usePreparedStatements: true

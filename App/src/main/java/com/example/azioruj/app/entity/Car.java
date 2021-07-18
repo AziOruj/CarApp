@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "cars_test")
+@Table(name = "cars")
 @NamedQuery(name="Car.findByName",query = "SELECT s from Car s WHERE LOWER(s.credit)=LOWER(?1)")
 public class Car {
 
